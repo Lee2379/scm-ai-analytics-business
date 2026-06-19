@@ -1,0 +1,41 @@
+group,city,category,experimental_units,stockout_rate,service_level,lost_sales_units,total_scm_cost_jpy
+Baseline: planner policy,Fukuoka,Bottoms,2,0.0,1.0,0.0,24538.5
+Baseline: planner policy,Fukuoka,Innerwear,3,0.667,0.943,100.2,203607.98
+Baseline: planner policy,Fukuoka,Knitwear,2,0.5,0.957,54.0,203662.85
+Baseline: planner policy,Fukuoka,Outerwear,3,1.0,0.907,200.8,1185032.0
+Baseline: planner policy,Fukuoka,Shirts,2,0.5,0.939,44.4,152760.16
+Baseline: planner policy,Osaka,Bottoms,2,0.5,0.944,52.4,227669.89
+Baseline: planner policy,Osaka,Innerwear,3,0.667,0.909,418.0,758369.19
+Baseline: planner policy,Osaka,Knitwear,2,0.5,0.978,38.8,129876.59
+Baseline: planner policy,Osaka,Outerwear,3,1.0,0.895,164.2,978038.0
+Baseline: planner policy,Osaka,Shirts,2,0.5,0.968,56.6,206138.94
+Baseline: planner policy,Tokyo,Bottoms,4,0.5,0.972,50.8,219410.25
+Baseline: planner policy,Tokyo,Innerwear,6,0.833,0.923,427.8,751698.82
+Baseline: planner policy,Tokyo,Knitwear,4,1.0,0.905,201.2,730068.0
+Baseline: planner policy,Tokyo,Outerwear,6,0.833,0.901,417.2,2009552.15
+Baseline: planner policy,Tokyo,Shirts,4,0.5,0.93,271.8,873260.44
+Baseline: planner policy,Yokohama,Bottoms,2,1.0,0.945,70.8,293692.0
+Baseline: planner policy,Yokohama,Innerwear,3,0.667,0.959,179.8,329238.95
+Baseline: planner policy,Yokohama,Knitwear,2,0.5,0.925,83.6,288434.17
+Baseline: planner policy,Yokohama,Outerwear,3,1.0,0.887,171.6,1013604.0
+Baseline: planner policy,Yokohama,Shirts,2,1.0,0.874,240.6,773234.0
+Candidate: constrained AI-assisted policy,Fukuoka,Bottoms,2,0.0,1.0,0.0,24538.5
+Candidate: constrained AI-assisted policy,Fukuoka,Innerwear,3,0.667,0.966,52.2,116447.98
+Candidate: constrained AI-assisted policy,Fukuoka,Knitwear,2,0.5,0.966,43.0,171212.85
+Candidate: constrained AI-assisted policy,Fukuoka,Outerwear,3,1.0,0.933,143.8,842242.0
+Candidate: constrained AI-assisted policy,Fukuoka,Shirts,2,0.5,0.952,35.4,126210.16
+Candidate: constrained AI-assisted policy,Osaka,Bottoms,2,0.5,0.955,42.4,188169.89
+Candidate: constrained AI-assisted policy,Osaka,Innerwear,3,0.333,0.956,267.8,504395.07
+Candidate: constrained AI-assisted policy,Osaka,Knitwear,2,0.5,0.982,30.8,106276.59
+Candidate: constrained AI-assisted policy,Osaka,Outerwear,3,1.0,0.923,126.2,756338.0
+Candidate: constrained AI-assisted policy,Osaka,Shirts,2,0.5,0.974,45.6,180828.19
+Candidate: constrained AI-assisted policy,Tokyo,Bottoms,4,0.5,0.978,39.8,175960.25
+Candidate: constrained AI-assisted policy,Tokyo,Innerwear,6,0.833,0.946,295.8,534278.82
+Candidate: constrained AI-assisted policy,Tokyo,Knitwear,4,1.0,0.924,161.2,596068.0
+Candidate: constrained AI-assisted policy,Tokyo,Outerwear,6,0.833,0.93,319.2,1544288.45
+Candidate: constrained AI-assisted policy,Tokyo,Shirts,4,0.5,0.944,217.8,713960.44
+Candidate: constrained AI-assisted policy,Yokohama,Bottoms,2,1.0,0.956,56.8,238392.0
+Candidate: constrained AI-assisted policy,Yokohama,Innerwear,3,0.667,0.967,143.8,289950.1
+Candidate: constrained AI-assisted policy,Yokohama,Knitwear,2,0.5,0.94,66.6,238284.17
+Candidate: constrained AI-assisted policy,Yokohama,Outerwear,3,1.0,0.914,132.6,786954.0
+Candidate: constrained AI-assisted policy,Yokohama,Shirts,2,1.0,0.935,97.6,358984.0

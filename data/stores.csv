@@ -1,0 +1,6 @@
+store_id,city,lat,lon,store_type
+TOKYO_01,Tokyo,35.6812,139.7671,Flagship
+TOKYO_02,Tokyo,35.6895,139.6917,Urban
+YOKOHAMA_01,Yokohama,35.4437,139.638,Urban
+OSAKA_01,Osaka,34.6937,135.5023,Flagship
+FUKUOKA_01,Fukuoka,33.5902,130.4017,Urban

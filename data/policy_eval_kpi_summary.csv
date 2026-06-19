@@ -1,0 +1,3 @@
+group,experimental_units,stockout_rate,overstock_rate,service_level,lost_sales_units,lost_sales_proxy_jpy,holding_cost_jpy,order_handling_cost_jpy,transfer_cost_jpy,total_scm_cost_jpy,cost_delta_vs_control_jpy,cost_reduction_vs_control_pct
+Baseline: planner policy,60,0.717,0.0,0.929,3244.6,10414574.0,253952.88,683360.0,0.0,11351886.88,0.0,0.0
+Candidate: constrained AI-assisted policy,60,0.7,0.0,0.949,2318.4,7476636.0,241103.46,709320.0,66720.0,8493779.46,-2858107.42,0.2518

@@ -1,0 +1,9 @@
+sku_id,product_name,from_store,from_city,to_store,to_city,transfer_qty,reason
+SKU_HT_002,HEATTECH Turtleneck,YOKOHAMA_01,Yokohama,FUKUOKA_01,Fukuoka,112,Move 112 units from overstock store to stockout-risk store.
+SKU_HT_002,HEATTECH Turtleneck,YOKOHAMA_01,Yokohama,OSAKA_01,Osaka,268,Move 268 units from overstock store to stockout-risk store.
+SKU_HT_002,HEATTECH Turtleneck,YOKOHAMA_01,Yokohama,TOKYO_01,Tokyo,184,Move 184 units from overstock store to stockout-risk store.
+SKU_OUT_001,Light Down Jacket,TOKYO_01,Tokyo,FUKUOKA_01,Fukuoka,67,Move 67 units from overstock store to stockout-risk store.
+SKU_OUT_001,Light Down Jacket,TOKYO_01,Tokyo,OSAKA_01,Osaka,20,Move 20 units from overstock store to stockout-risk store.
+SKU_OUT_001,Light Down Jacket,TOKYO_01,Tokyo,TOKYO_02,Tokyo,59,Move 59 units from overstock store to stockout-risk store.
+SKU_OUT_001,Light Down Jacket,TOKYO_01,Tokyo,YOKOHAMA_01,Yokohama,20,Move 20 units from overstock store to stockout-risk store.
+SKU_SH_002,Linen Blend Shirt,OSAKA_01,Osaka,YOKOHAMA_01,Yokohama,381,Move 381 units from overstock store to stockout-risk store.

@@ -1,0 +1,13 @@
+sku_id,product_name,category,season,unit_price
+SKU_HT_001,HEATTECH Crew Neck,Innerwear,Winter,1290
+SKU_HT_002,HEATTECH Turtleneck,Innerwear,Winter,1990
+SKU_AR_001,AIRism Cotton T-Shirt,Innerwear,Summer,1490
+SKU_AR_002,AIRism Hoodie,Outerwear,Summer,2990
+SKU_DN_001,Ultra Stretch Jeans,Bottoms,All-season,3990
+SKU_DN_002,Wide Fit Jeans,Bottoms,All-season,3990
+SKU_SH_001,Oxford Shirt,Shirts,All-season,2990
+SKU_SH_002,Linen Blend Shirt,Shirts,Summer,2990
+SKU_OUT_001,Light Down Jacket,Outerwear,Winter,6990
+SKU_OUT_002,Blocktech Parka,Outerwear,Rain,5990
+SKU_KN_001,Merino Knit,Knitwear,Winter,3990
+SKU_KN_002,Cotton Cardigan,Knitwear,Spring,2990
