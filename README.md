@@ -207,6 +207,7 @@ python -m pytest -q
 
 ## Documentation
 
+- [Portfolio Case Study](docs/PORTFOLIO_CASE_STUDY.md)
 - [Architecture and Data Contracts](docs/ARCHITECTURE.md)
 - [Modeling and Evaluation](docs/MODELING_AND_EVALUATION.md)
 - [Decision Intelligence and Copilot](docs/DECISION_INTELLIGENCE.md)
