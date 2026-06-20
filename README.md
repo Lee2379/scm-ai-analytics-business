@@ -2,13 +2,6 @@
 
 **Explainable demand forecasting, inventory policy optimization, and decision intelligence for retail supply-chain operations.**
 
-[![Live App](https://img.shields.io/badge/Live%20App-Streamlit-FF4B4B?logo=streamlit)](https://scm-ai-analytics-business.streamlit.app)
-[![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)](runtime.txt)
-[![CI](https://github.com/Lee2379/scm-ai-analytics-business/actions/workflows/ci.yml/badge.svg)](https://github.com/Lee2379/scm-ai-analytics-business/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-
-> Portfolio project for senior data-science / AI-engineering roles. The application joins forecasting, inventory control, offline policy evaluation, explainability, and an SCM decision copilot in one deployable product.
-
 ## Live Product
 
 **Deployment:** [scm-ai-analytics-business.streamlit.app](https://scm-ai-analytics-business.streamlit.app)
@@ -53,11 +46,25 @@ These results are from a **synthetic paired offline simulation**, not a randomiz
 
 ## System Architecture
 
-<a href="assets/architecture/scm-decision-intelligence-workflow.svg">
-  <img src="assets/architecture/scm-decision-intelligence-workflow.svg" width="100%" alt="SCM decision intelligence architecture from governed data through forecasting, inventory policy, offline evaluation, a grounded copilot, and the Streamlit workspace">
-</a>
+The workflow starts from an operational SCM problem, converts it into governed SKU-store data and inventory logic, evaluates whether AI-assisted decisions improve business KPIs, and ends with a dashboard and Copilot that support planner decision-making.
 
-<p align="center"><sub>Click the workflow to open the full-resolution scalable diagram.</sub></p>
+```mermaid
+flowchart TD
+    A["1. Business Problem<br/><br/>Stockout and overstock<br/>在庫切れと過剰在庫"]
+    B["2. Governed SCM Data<br/><br/>Sales · inventory · supply · calendar · weather<br/>Synthetic and reproducible"]
+    C["3. Demand Intelligence<br/><br/>28-day SKU-store forecast<br/>Drivers · confidence · exceptions"]
+    D["4. Inventory Decision Engine<br/><br/>Safety stock · ROP · replenishment ranking<br/>Store-transfer recommendations"]
+    E["5. Offline Policy Evaluation<br/><br/>Planner baseline vs AI-assisted candidate<br/>Stockout · service level · total SCM cost"]
+    F["6. Decision Delivery<br/><br/>Streamlit workspace + grounded SCM Copilot<br/>English · 日本語 · 한국어"]
+
+    A --> B --> C --> D --> E --> F
+
+    classDef workflow fill:#fff4f4,stroke:#e60012,stroke-width:2px,color:#171717;
+    classDef delivery fill:#ffe8e8,stroke:#e60012,stroke-width:3px,color:#171717;
+    class A,B,C,D,E workflow;
+    class F delivery;
+    linkStyle default stroke:#e60012,stroke-width:2px;
+```
 
 The design separates analytical computation from presentation. CSV outputs form explicit data contracts between the SCM engine, evaluation layer, agent context builder, and deployed UI.
 
@@ -215,6 +222,21 @@ python -m pytest -q
 - Run a shadow-mode production pilot before any automated ordering.
 - Add drift, service-level, override, and realized-savings monitoring.
 - Introduce role-based access and audit logging for enterprise deployment.
+
+## Multilingual Copilot — Screenshot Evidence
+
+The full-height panels are placed side by side at their natural scale so the live prompt, ranked actions, inventory values, reorder points, forecasts, and recommended quantities remain readable.
+
+<table>
+  <tr>
+    <th width="50%">English</th>
+    <th width="50%">日本語</th>
+  </tr>
+  <tr>
+    <td valign="top"><img src="assets/screenshots/09-copilot-detail-en.png" width="100%" alt="English SCM Decision Copilot panel with a live question and ranked replenishment recommendations"></td>
+    <td valign="top"><img src="assets/screenshots/10-copilot-detail-ja.png" width="100%" alt="Japanese SCM Decision Copilot panel with a live question and ranked replenishment recommendations"></td>
+  </tr>
+</table>
 
 ## License
 
