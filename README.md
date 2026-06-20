@@ -53,26 +53,11 @@ These results are from a **synthetic paired offline simulation**, not a randomiz
 
 ## System Architecture
 
-```mermaid
-flowchart LR
-    A[Sales, calendar, weather] --> B[Feature and demand statistics]
-    B --> C[28-day SKU-store forecast]
-    C --> D[Safety stock and ROP]
-    E[Inventory and supply policy] --> D
-    D --> F[Replenishment ranking]
-    D --> G[Store-transfer matching]
-    F --> H[Offline policy simulator]
-    G --> H
-    H --> I[Paired statistical evaluation]
-    B --> J[Forecast diagnostics]
-    C --> J
-    F --> K[Grounded SCM Copilot]
-    G --> K
-    H --> K
-    I --> L[Streamlit decision workspace]
-    J --> L
-    K --> L
-```
+<a href="assets/architecture/scm-decision-intelligence-workflow.svg">
+  <img src="assets/architecture/scm-decision-intelligence-workflow.svg" width="100%" alt="SCM decision intelligence architecture from governed data through forecasting, inventory policy, offline evaluation, a grounded copilot, and the Streamlit workspace">
+</a>
+
+<p align="center"><sub>Click the workflow to open the full-resolution scalable diagram.</sub></p>
 
 The design separates analytical computation from presentation. CSV outputs form explicit data contracts between the SCM engine, evaluation layer, agent context builder, and deployed UI.
 
@@ -155,6 +140,14 @@ The Copilot supports four controlled intent families:
 
 Local responses are generated from reviewed analytical tables. Optional Gemini integration is isolated behind environment variables and a supplied-data-only prompt. No secret is committed to the repository.
 
+### Demonstration question and grounded answer
+
+> **Question:** Compare the baseline and AI-assisted replenishment policies across stockout rate, service level, and total SCM cost. Explain the expected impact, key improvement drivers, and limitations.
+
+**Copilot answer:** The synthetic candidate policy reduces the total SCM cost proxy from **¥11.35M to ¥8.49M (-25.2%)** and improves service level from **92.9% to 94.9%**, while simulated stockout exposure moves from **71.7% to 70.0%**. The largest modeled cost-reduction drivers are Tokyo / Outerwear, Yokohama / Shirts, and Fukuoka / Outerwear. These are offline scenario results—not causal production evidence—and depend on cost assumptions that require sensitivity testing.
+
+See [Copilot Demonstration Questions and Answers](docs/COPILOT_DEMO.md) for the full English and Japanese prompts, detailed responses, operational-prioritization example, and grounding boundary.
+
 ## Repository Structure
 
 ```text
@@ -211,6 +204,7 @@ python -m pytest -q
 - [Architecture and Data Contracts](docs/ARCHITECTURE.md)
 - [Modeling and Evaluation](docs/MODELING_AND_EVALUATION.md)
 - [Decision Intelligence and Copilot](docs/DECISION_INTELLIGENCE.md)
+- [Copilot Demonstration Questions and Answers](docs/COPILOT_DEMO.md)
 - [Deployment, Privacy, and Operations](docs/DEPLOYMENT_AND_PRIVACY.md)
 
 ## Limitations and Next Steps
