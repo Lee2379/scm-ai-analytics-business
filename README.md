@@ -49,21 +49,20 @@ These results are from a **synthetic paired offline simulation**, not a randomiz
 The workflow starts from an operational SCM problem, converts it into governed SKU-store data and inventory logic, evaluates whether AI-assisted decisions improve business KPIs, and ends with a dashboard and Copilot that support planner decision-making.
 
 ```mermaid
+%%{init: {"theme":"base","flowchart":{"curve":"linear","htmlLabels":true,"nodeSpacing":45,"rankSpacing":55},"themeVariables":{"fontFamily":"Arial, sans-serif","fontSize":"18px","primaryTextColor":"#111111","lineColor":"#ff0000"}}}%%
 flowchart TD
-    A["1. Business Problem<br/><br/>Stockout and overstock<br/>在庫切れと過剰在庫"]
-    B["2. Governed SCM Data<br/><br/>Sales · inventory · supply · calendar · weather<br/>Synthetic and reproducible"]
-    C["3. Demand Intelligence<br/><br/>28-day SKU-store forecast<br/>Drivers · confidence · exceptions"]
-    D["4. Inventory Decision Engine<br/><br/>Safety stock · ROP · replenishment ranking<br/>Store-transfer recommendations"]
-    E["5. Offline Policy Evaluation<br/><br/>Planner baseline vs AI-assisted candidate<br/>Stockout · service level · total SCM cost"]
-    F["6. Decision Delivery<br/><br/>Streamlit workspace + grounded SCM Copilot<br/>English · 日本語 · 한국어"]
+    A["1. Business Problem<br/><br/>Stockout and overstock<br/>(ビジネス課題)"]
+    B["2. Public-Data-Inspired<br/>SCM Tables<br/><br/>Sales, inventory, supply,<br/>forecast<br/>(公開データ参考)"]
+    C["3. SKU-Store Forecast<br/><br/>28-day demand forecast<br/>(需要予測)"]
+    D["4. Inventory Policy<br/><br/>ROP, safety stock,<br/>replenishment and transfer<br/>(在庫政策)"]
+    E["5. Policy Evaluation<br/><br/>Baseline vs AI-assisted<br/>Stockout, service, cost<br/>(政策比較)"]
+    F["6. Decision Support<br/><br/>Dashboard + SCM Copilot<br/>(意思決定支援)"]
 
     A --> B --> C --> D --> E --> F
 
-    classDef workflow fill:#fff4f4,stroke:#e60012,stroke-width:2px,color:#171717;
-    classDef delivery fill:#ffe8e8,stroke:#e60012,stroke-width:3px,color:#171717;
-    class A,B,C,D,E workflow;
-    class F delivery;
-    linkStyle default stroke:#e60012,stroke-width:2px;
+    classDef workflow fill:#fff5f5,stroke:#ff0000,stroke-width:2px,color:#111111;
+    class A,B,C,D,E,F workflow;
+    linkStyle default stroke:#ff0000,stroke-width:2px;
 ```
 
 The design separates analytical computation from presentation. CSV outputs form explicit data contracts between the SCM engine, evaluation layer, agent context builder, and deployed UI.
