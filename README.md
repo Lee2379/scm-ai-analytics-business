@@ -2,13 +2,6 @@
 
 **Explainable demand forecasting, inventory policy optimization, and decision intelligence for retail supply-chain operations.**
 
-[![Live App](https://img.shields.io/badge/Live%20App-Streamlit-FF4B4B?logo=streamlit)](https://scm-ai-analytics-business.streamlit.app)
-[![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)](runtime.txt)
-[![CI](https://github.com/Lee2379/scm-ai-analytics-business/actions/workflows/ci.yml/badge.svg)](https://github.com/Lee2379/scm-ai-analytics-business/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-
-> Portfolio project for senior data-science / AI-engineering roles. The application joins forecasting, inventory control, offline policy evaluation, explainability, and an SCM decision copilot in one deployable product.
-
 ## Live Product
 
 **Deployment:** [scm-ai-analytics-business.streamlit.app](https://scm-ai-analytics-business.streamlit.app)
