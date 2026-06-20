@@ -56,7 +56,7 @@ flowchart TD
     C["3. SKU-Store Forecast<br/><br/>28-day demand forecast<br/>(需要予測)"]
     D["4. Inventory Policy<br/><br/>ROP, safety stock,<br/>replenishment and transfer<br/>(在庫政策)"]
     E["5. Policy Evaluation<br/><br/>Baseline vs AI-assisted<br/>Stockout, service, cost<br/>(政策比較)"]
-    F["6. Decision Support<br/><br/>Dashboard + SCM Copilot<br/>(意思決定支援)"]
+    F["6. Decision Support (Deployment)<br/><br/>Dashboard + SCM Copilot<br/>(意思決定支援)"]
 
     A --> B --> C --> D --> E --> F
 
