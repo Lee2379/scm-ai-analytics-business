@@ -56,7 +56,7 @@ flowchart TD
     C["3. SKU-Store Forecast<br/><br/>28-day demand forecast<br/>(需要予測)"]
     D["4. Inventory Policy<br/><br/>ROP, safety stock,<br/>replenishment and transfer<br/>(在庫政策)"]
     E["5. Policy Evaluation<br/><br/>Baseline vs AI-assisted<br/>Stockout, service, cost<br/>(政策比較)"]
-    F["6. Decision Support<br/><br/>Dashboard + SCM Copilot<br/>(意思決定支援)"]
+    F["6. Decision Support (Deployment)<br/><br/>Dashboard + SCM Copilot<br/>(意思決定支援)"]
 
     A --> B --> C --> D --> E --> F
 
@@ -94,6 +94,17 @@ The policy workspace surfaces the business result and its limits together. City-
 ![Offline policy improvement drivers](assets/screenshots/05-policy-evaluation-multilingual.png)
 
 ## Multilingual Operations
+
+<table>
+  <tr>
+    <th width="50%">English</th>
+    <th width="50%">日本語</th>
+  </tr>
+  <tr>
+    <td valign="top"><img src="assets/screenshots/09-copilot-detail-en.png" width="100%" alt="English SCM Decision Copilot panel with a live question and ranked replenishment recommendations"></td>
+    <td valign="top"><img src="assets/screenshots/10-copilot-detail-ja.png" width="100%" alt="Japanese SCM Decision Copilot panel with a live question and ranked replenishment recommendations"></td>
+  </tr>
+</table>
 
 Japanese screens are included as localization evidence rather than replacing the English portfolio narrative. Labels, decision summaries, KPI explanations, and Copilot responses are localized while product and store identifiers remain stable.
 
@@ -221,21 +232,6 @@ python -m pytest -q
 - Run a shadow-mode production pilot before any automated ordering.
 - Add drift, service-level, override, and realized-savings monitoring.
 - Introduce role-based access and audit logging for enterprise deployment.
-
-## Multilingual Copilot — Screenshot Evidence
-
-The full-height panels are placed side by side at their natural scale so the live prompt, ranked actions, inventory values, reorder points, forecasts, and recommended quantities remain readable.
-
-<table>
-  <tr>
-    <th width="50%">English</th>
-    <th width="50%">日本語</th>
-  </tr>
-  <tr>
-    <td valign="top"><img src="assets/screenshots/09-copilot-detail-en.png" width="100%" alt="English SCM Decision Copilot panel with a live question and ranked replenishment recommendations"></td>
-    <td valign="top"><img src="assets/screenshots/10-copilot-detail-ja.png" width="100%" alt="Japanese SCM Decision Copilot panel with a live question and ranked replenishment recommendations"></td>
-  </tr>
-</table>
 
 ## License
 
