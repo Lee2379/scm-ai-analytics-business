@@ -21,6 +21,19 @@ def test_policy_comparison_routes_to_policy_evaluation() -> None:
     assert "synthetic offline simulation" in response
 
 
+def test_japanese_policy_comparison_does_not_fall_through_to_reorder() -> None:
+    tables = load_agent_tables(DATA_DIR)
+    response = local_agent_reply(
+        "ベースラインとAI支援型の発注ポリシーを、欠品率・サービスレベル・総SCMコストで比較し、"
+        "期待される効果、主な改善要因、分析上の限界を説明してください。",
+        tables,
+        lang="ja",
+    )
+
+    assert "主要KPI比較" in response
+    assert "優先再発注リスト" not in response
+
+
 def test_reorder_question_returns_ranked_actions() -> None:
     tables = load_agent_tables(DATA_DIR)
     response = local_agent_reply(
@@ -40,4 +53,3 @@ def test_transfer_question_is_grounded_in_transfer_table() -> None:
 
     assert "STORE TRANSFER RECOMMENDATIONS" in response
     assert "->" in response
-
