@@ -2,6 +2,8 @@
 
 **Explainable demand forecasting, inventory policy optimization, and decision intelligence for retail supply-chain operations.**
 
+[日本語技術概要](README_ja.md)
+
 ## Live Product
 
 **Deployment:** [scm-ai-analytics-business.streamlit.app](https://scm-ai-analytics-business.streamlit.app)
@@ -43,6 +45,29 @@ This project implements that workflow end to end:
 | Total SCM cost proxy | ¥11,351,887 | ¥8,493,779 | **-25.2%** |
 
 These results are from a **synthetic paired offline simulation**, not a randomized production experiment. The cost result is statistically strong in the simulated sample; the stockout-flag McNemar test is not significant at 0.05. See [Modeling and Evaluation](docs/MODELING_AND_EVALUATION.md) for the complete interpretation.
+
+## Forecast Validation
+
+The forecasting layer is evaluated with three non-overlapping rolling origins, a 28-day horizon, and 5,040 actual daily outcomes per model.
+
+| Rank | Model | WAPE | MAE | Bias |
+|---:|---|---:|---:|---:|
+| 1 | Global gradient boosting | **17.97%** | **4.97** | -1.81% |
+| 2 | Moving average (28d) | 21.45% | 5.93 | -3.75% |
+| 3 | Exponentially weighted mean | 21.69% | 6.00 | +1.04% |
+| 4 | Seasonal naive (weekday) | 21.99% | 6.08 | -5.81% |
+
+![Forecast model comparison](assets/analysis/forecast_model_comparison.png)
+
+The gradient-boosted model ranks first at every origin and in every demand-velocity segment. High-velocity pairs retain the largest error and negative bias. Full design, segment results, and limitations are documented in [Forecast Validation](docs/FORECAST_VALIDATION.md).
+
+## Policy Sensitivity
+
+The policy conclusion is evaluated across 81 combinations of service target and lost-sales, holding, and order-handling cost multipliers. The candidate policy has a lower simulated total cost in every evaluated scenario; the reduction ranges from **23.16% to 26.43%**.
+
+![Inventory policy sensitivity](assets/analysis/policy_sensitivity_heatmap.png)
+
+This is bounded scenario evidence, not causal production impact. Scenario definitions and operating limitations are documented in [Inventory Policy Sensitivity Analysis](docs/POLICY_SENSITIVITY.md).
 
 ## System Architecture
 
@@ -106,7 +131,7 @@ The policy workspace surfaces the business result and its limits together. City-
   </tr>
 </table>
 
-Japanese screens are included as localization evidence rather than replacing the English portfolio narrative. Labels, decision summaries, KPI explanations, and Copilot responses are localized while product and store identifiers remain stable.
+Japanese screens provide localization evidence alongside the English technical narrative. Labels, decision summaries, KPI explanations, and Copilot responses are localized while product and store identifiers remain stable.
 
 <details>
 <summary><strong>Japanese workspace and policy-comparison response</strong></summary>
@@ -172,6 +197,9 @@ See [Copilot Demonstration Questions and Answers](docs/COPILOT_DEMO.md) for the 
 ├── app.py                         # Streamlit decision workspace
 ├── src/
 │   ├── scm_engine.py              # Forecast, ROP, replenishment, transfer logic
+│   ├── forecast_backtesting.py    # Rolling-origin model validation
+│   ├── policy_sensitivity_analysis.py
+│   ├── analysis_visuals.py        # Reviewed static analytical charts
 │   ├── policy_evaluation_simulation.py
 │   └── agent.py                   # Context builder and grounded Copilot
 ├── data/                          # Synthetic inputs and reproducible outputs
@@ -197,6 +225,9 @@ Open `http://localhost:8501`.
 ```bash
 python -m src.scm_engine
 python -m src.policy_evaluation_simulation
+python -m src.forecast_backtesting
+python -m src.policy_sensitivity_analysis
+python -m src.analysis_visuals
 ```
 
 ### Run tests
@@ -217,9 +248,11 @@ python -m pytest -q
 
 ## Documentation
 
-- [Portfolio Case Study](docs/PORTFOLIO_CASE_STUDY.md)
+- [Business Case](docs/BUSINESS_CASE.md)
 - [Architecture and Data Contracts](docs/ARCHITECTURE.md)
+- [Forecast Validation](docs/FORECAST_VALIDATION.md)
 - [Modeling and Evaluation](docs/MODELING_AND_EVALUATION.md)
+- [Inventory Policy Sensitivity Analysis](docs/POLICY_SENSITIVITY.md)
 - [Decision Intelligence and Copilot](docs/DECISION_INTELLIGENCE.md)
 - [Copilot Demonstration Questions and Answers](docs/COPILOT_DEMO.md)
 - [Deployment, Privacy, and Operations](docs/DEPLOYMENT_AND_PRIVACY.md)

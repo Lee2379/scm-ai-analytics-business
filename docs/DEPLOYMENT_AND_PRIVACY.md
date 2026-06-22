@@ -15,7 +15,7 @@
 - Real secret files are excluded by `.gitignore`.
 - Example configuration contains placeholders only.
 - The public deployment requires no external model credential and therefore uses deterministic local Copilot responses.
-- A runtime `robots` directive requests `noindex`, `nofollow`, `noarchive`, `nosnippet`, and `noimageindex` for portfolio testing.
+- A runtime `robots` directive requests `noindex`, `nofollow`, `noarchive`, `nosnippet`, and `noimageindex` for the controlled demonstration.
 
 Search-engine directives are requests, not access controls. A production private deployment should use authentication and network-level restrictions.
 
