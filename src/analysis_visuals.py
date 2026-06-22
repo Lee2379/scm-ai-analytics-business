@@ -164,4 +164,3 @@ def build_analysis_visuals(data_dir: str | Path, output_dir: str | Path) -> list
 if __name__ == "__main__":
     repository_root = Path(__file__).resolve().parents[1]
     build_analysis_visuals(repository_root / "data", repository_root / "assets" / "analysis")
-

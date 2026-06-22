@@ -241,4 +241,3 @@ def build_policy_sensitivity_outputs(
 
 if __name__ == "__main__":
     build_policy_sensitivity_outputs(Path(__file__).resolve().parents[1] / "data")
-

@@ -42,4 +42,3 @@ def test_policy_sensitivity_grid_and_pairwise_comparison_contract() -> None:
     assert scenarios["candidate_lower_cost"].all()
     assert scenarios["cost_reduction_pct"].between(0, 1).all()
     assert set(scenarios["service_level_target"].round(2)) == {0.90, 0.95, 0.97}
-

@@ -56,4 +56,3 @@ python -m src.analysis_visuals
 ```
 
 The reviewed tables are stored in `data/policy_sensitivity_*.csv`.
-

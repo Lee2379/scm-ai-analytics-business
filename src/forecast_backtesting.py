@@ -233,4 +233,3 @@ def build_forecast_backtest_outputs(
 
 if __name__ == "__main__":
     build_forecast_backtest_outputs(Path(__file__).resolve().parents[1] / "data")
-
