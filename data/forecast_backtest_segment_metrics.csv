@@ -1,0 +1,13 @@
+model,demand_velocity,observations,actual_units,predicted_units,wape,mae,bias
+Seasonal naive (weekday),Medium,2772.0,91572.0,86781.0,0.216,7.135,-0.0523
+Seasonal naive (weekday),Low,2016.0,35372.0,34830.5,0.2082,3.652,-0.0153
+Seasonal naive (weekday),High,252.0,12394.0,9625.0,0.282,13.868,-0.2234
+Moving average (28d),Medium,2772.0,91572.0,88649.0,0.2118,6.996,-0.0319
+Moving average (28d),Low,2016.0,35372.0,35003.0,0.2089,3.665,-0.0104
+Moving average (28d),High,252.0,12394.0,10463.0,0.2508,12.334,-0.1558
+Exponentially weighted mean,Medium,2772.0,91572.0,93159.8,0.2132,7.044,0.0173
+Exponentially weighted mean,Low,2016.0,35372.0,36351.7,0.2188,3.838,0.0277
+Exponentially weighted mean,High,252.0,12394.0,11278.0,0.2386,11.735,-0.09
+Global gradient boosting,Medium,2772.0,91572.0,89431.5,0.1759,5.809,-0.0234
+Global gradient boosting,Low,2016.0,35372.0,36103.0,0.1793,3.146,0.0207
+Global gradient boosting,High,252.0,12394.0,11275.0,0.2089,10.276,-0.0903

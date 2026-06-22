@@ -1,0 +1,5 @@
+model,observations,actual_units,predicted_units,wape,mae,bias,wape_rank
+Global gradient boosting,5040.0,139338.0,136809.5,0.1797,4.967,-0.0181,1
+Moving average (28d),5040.0,139338.0,134115.0,0.2145,5.93,-0.0375,2
+Exponentially weighted mean,5040.0,139338.0,140789.6,0.2169,5.996,0.0104,3
+Seasonal naive (weekday),5040.0,139338.0,131236.5,0.2199,6.078,-0.0581,4
