@@ -1,0 +1,4 @@
+service_level_target,scenarios,candidate_lower_cost_share,median_cost_reduction_pct,minimum_cost_reduction_pct,maximum_cost_reduction_pct,median_service_lift_pp,median_stockout_delta_pp
+0.9,27,1.0,0.2468,0.2316,0.2567,1.9989,-1.6667
+0.95,27,1.0,0.2503,0.2347,0.2606,1.9959,-1.6667
+0.97,27,1.0,0.2539,0.2379,0.2643,2.0069,-1.6667
