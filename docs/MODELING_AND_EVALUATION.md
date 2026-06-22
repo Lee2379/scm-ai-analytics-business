@@ -2,18 +2,17 @@
 
 ## Forecast design
 
-The forecast is intentionally transparent and deterministic for the synthetic portfolio scenario. It estimates SKU-store demand level and variability from recent sales, then applies calendar structure over a 28-day horizon. The objective is reproducible integration with inventory decisions—not a claim of state-of-the-art predictive accuracy.
+The operational forecast is intentionally transparent and deterministic for the synthetic evaluation scenario. It estimates SKU-store demand level and variability from recent sales, then applies calendar structure over a 28-day horizon. A separate backtesting pipeline evaluates stronger candidate models without changing the downstream inventory-policy contract.
 
-### Required production backtests
+### Rolling-origin backtest
 
-Before production use, evaluate with rolling-origin splits and compare against:
+The implemented validation uses three non-overlapping origins, a 28-day horizon, and 60 SKU-store pairs. It compares:
 
 - seasonal naive by weekday;
 - moving-average and exponential-smoothing baselines;
-- gradient-boosted models using promotion, weather, price, and calendar features;
-- hierarchical reconciliation across SKU, store, city, and category.
+- a global gradient-boosted model using origin-safe demand statistics, promotion, weather, and calendar features.
 
-Recommended metrics are WAPE, MAE, bias, service-weighted error, and interval coverage. Report them by demand velocity, intermittency, category, store, and forecast horizon.
+The global gradient-boosted model ranks first with 17.97% WAPE, 4.97 MAE, and -1.81% bias. See [Forecast Validation](FORECAST_VALIDATION.md) for results by origin and demand velocity. Production validation still requires a longer seasonal history, prediction intervals, hierarchical reconciliation, and service-weighted error.
 
 ## Inventory policy
 
@@ -71,10 +70,14 @@ Total SCM cost combines simulated lost-sales exposure, holding cost, order-handl
 | Service level | Paired t-test | Cohen's dz = 0.869 | 3.80e-09 | Strong simulated uplift |
 | Stockout flag | Exact McNemar | Risk difference = 0.017 | 0.50 | Not statistically significant |
 
+## Sensitivity analysis
+
+The robustness analysis recalculates policy outcomes across 81 combinations of service target and lost-sales, holding, and order-handling cost multipliers. The candidate policy has a lower simulated cost in all evaluated scenarios, with reductions ranging from 23.16% to 26.43%. See [Inventory Policy Sensitivity Analysis](POLICY_SENSITIVITY.md) for scenario definitions and limitations.
+
 ## Interpretation discipline
 
 - The sample is synthetic and the policy assignment is simulated.
 - Statistical significance reflects internal simulation consistency, not production causality.
-- Cost weights materially affect the headline savings result and require sensitivity analysis.
+- The sensitivity range is bounded and does not cover every operating environment.
 - Model error is not propagated through the current policy simulation.
 - A production decision requires shadow-mode evaluation and a controlled operational pilot.
