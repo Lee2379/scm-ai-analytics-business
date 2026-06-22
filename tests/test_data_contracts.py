@@ -16,6 +16,11 @@ REQUIRED_FILES = {
     "recommendations.csv",
     "transfer_recommendations.csv",
     "policy_eval_kpi_summary.csv",
+    "forecast_backtest_model_metrics.csv",
+    "forecast_backtest_origin_metrics.csv",
+    "forecast_backtest_segment_metrics.csv",
+    "policy_sensitivity_scenarios.csv",
+    "policy_sensitivity_robustness.csv",
 }
 PROHIBITED_DIRECT_IDENTIFIER_COLUMNS = {
     "email",
@@ -48,4 +53,3 @@ def test_offline_policy_summary_has_comparable_cohorts() -> None:
     assert summary["group"].str.contains("Candidate").sum() == 1
     assert summary["experimental_units"].nunique() == 1
     assert summary["experimental_units"].iloc[0] == 60
-

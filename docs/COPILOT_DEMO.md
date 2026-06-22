@@ -1,6 +1,6 @@
 # SCM Decision Copilot — Demonstration Questions and Answers
 
-The public demo uses controlled intent routing over reviewed analytical tables. The following prompts were used for the portfolio screenshots. Answers are generated from the repository's synthetic offline policy-evaluation outputs; they are not free-form claims or production results.
+The public demo uses controlled intent routing over reviewed analytical tables. The following prompts were used for the deployment screenshots. Answers are generated from the repository's synthetic offline policy-evaluation outputs; they are not free-form claims or production results.
 
 ## English demonstration
 

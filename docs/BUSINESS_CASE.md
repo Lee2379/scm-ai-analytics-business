@@ -1,4 +1,4 @@
-# Portfolio Case Study
+# Business Case
 
 ## The business problem
 
@@ -61,9 +61,8 @@ The stockout-rate change is not statistically significant in the current paired 
 
 ## Interview discussion prompts
 
-- Why was a transparent deterministic forecast appropriate for this portfolio stage?
+- Why was a transparent deterministic forecast appropriate for the initial operating baseline?
 - How would intermittent-demand SKUs change the modeling choice?
 - Which assumptions drive the 25.2% simulated cost reduction?
 - How would you design a production pilot that measures causal operational lift?
 - What controls are required before allowing an LLM to propose or execute inventory actions?
-
